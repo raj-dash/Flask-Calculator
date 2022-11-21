@@ -12,12 +12,17 @@
         <form action="/" method="POST">
             <center>
                 <div class="lspace"></div>
-                <input type="text" name="a" value="A">
+                <input type="text" name="a" value="Enter a number">
                 <div class="space"></div>
-                <input type="text" name="b" value="B">
+                <input type="text" name="b" value="Enter a number">
                 <div class="space"></div>
-                <button type="submit" value="submit">Caluclate</button>
+                <input type="text" name="op" value="add, subtract, multiply, divide">
+                <div class="space"></div>
+                <button type="submit" value="submit">Calculate</button>
             </center>
         </form>
+        {%if ansh%}
+        <center><p>Answer is : {{ansh}}</p><center>
+        {%endif%}
     </body>
 </html>
