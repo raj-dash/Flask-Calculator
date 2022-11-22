@@ -10,19 +10,19 @@ def calculate():
             a = float(request.form.get('a'))
             b = float(request.form.get('b'))
             operation = request.form.get('op').lower()
-            if operation == 'add':
+            if operation == '+':
                 ans = a+b
-            elif operation == 'subtract':
+            elif operation == '-':
                 ans = a-b
-            elif operation == 'multiply':
+            elif operation == '*' or operation == 'x':
                 ans = a*b
-            elif operation == 'divide':
+            elif operation == '/':
                 ans = a/b
             else:
                 ans = "Enter valid values"
         except ValueError:
             ans = "Enter Valid Values"
-    return render_template('index.html', ansh=ans)
+    return render_template('index.html', ansh=str(ans))
 
 if __name__ == "__main__":
     app.run(debug=True)

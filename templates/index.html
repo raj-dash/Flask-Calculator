@@ -20,13 +20,16 @@
                 <div class="space"></div>
                 <input class="center" type="text" name="b" value="Enter a number">
                 <div class="space"></div>
-                <input class="center" type="text" name="op" value="add, subtract, multiply, divide">
+                <input class="center" type="text" name="op" value="+, - , *, /">
                 <div class="space"></div>
                 <button class="center" type="submit" value="submit">Calculate</button>
             </center>
         </form>
-        {%if ansh%}
+        {%if ansh.isdigit()%}
         <p class="center">Answer is : {{ansh}}</p>
+        {%endif%}
+        {%if ansh%}
+        <p class="center">{{ansh}}</p>
         {%endif%}
     </body>
 </html>
