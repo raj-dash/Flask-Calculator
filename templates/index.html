@@ -1,5 +1,10 @@
+<!DOCTYPE html>
 <html>
     <style>
+        body {
+            background: rgb(230,227,11);
+            background: radial-gradient(circle, rgba(230,227,11,1) 0%, rgba(250,32,21,1) 100%);
+        }
         .center {
             text-align: center;
         }
@@ -25,11 +30,8 @@
                 <button class="center" type="submit" value="submit">Calculate</button>
             </center>
         </form>
-        {%if ansh.isdigit()%}
-        <p class="center">Answer is : {{ansh}}</p>
-        {%endif%}
         {%if ansh%}
-        <p class="center">{{ansh}}</p>
+        <p class="center">Answer is : {{ansh}}</p>
         {%endif%}
     </body>
 </html>

@@ -4,12 +4,12 @@ app = Flask(__name__)
 
 @app.route("/", methods=['POST', 'GET'])
 def calculate():
-    ans=''
+    ans = a = b = operation = ''
     if request.method=='POST':
         try:
             a = float(request.form.get('a'))
             b = float(request.form.get('b'))
-            operation = request.form.get('op').lower()
+            operation = request.form.get('op')
             if operation == '+':
                 ans = a+b
             elif operation == '-':
@@ -22,7 +22,7 @@ def calculate():
                 ans = "Enter valid values"
         except ValueError:
             ans = "Enter Valid Values"
-    return render_template('index.html', ansh=str(ans))
+    return render_template('index.html', ansh=ans)
 
 if __name__ == "__main__":
     app.run(debug=True)
