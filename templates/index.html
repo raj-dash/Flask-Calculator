@@ -1,28 +1,32 @@
 <html>
     <style>
+        .center {
+            text-align: center;
+        }
         .space {
-            margin-top: 35px;
+            margin-top: 30px;
         }
 
         .lspace {
-            margin-top: 50px;
+            margin-top: 40px;
         }
     </style>
     <body>
+        <h1 class="center">Calculator</h1>
         <form action="/" method="POST">
             <center>
                 <div class="lspace"></div>
-                <input type="text" name="a" value="Enter a number">
+                <input class="center" type="text" name="a" value="Enter a number">
                 <div class="space"></div>
-                <input type="text" name="b" value="Enter a number">
+                <input class="center" type="text" name="b" value="Enter a number">
                 <div class="space"></div>
-                <input type="text" name="op" value="add, subtract, multiply, divide">
+                <input class="center" type="text" name="op" value="add, subtract, multiply, divide">
                 <div class="space"></div>
-                <button type="submit" value="submit">Calculate</button>
+                <button class="center" type="submit" value="submit">Calculate</button>
             </center>
         </form>
         {%if ansh%}
-        <center><p>Answer is : {{ansh}}</p><center>
+        <p class="center">Answer is : {{ansh}}</p>
         {%endif%}
     </body>
 </html>
