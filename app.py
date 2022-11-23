@@ -8,6 +8,7 @@ def main():
 
 @app.route('/simple')
 def calculate():
+    result = note = ''
     return render_template('simple.html')
 
 if __name__ == "__main__":

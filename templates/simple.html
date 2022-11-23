@@ -8,4 +8,44 @@
         <p class="lead">Welcome to the simple calculator</p>
     </div>
 </div>
+
+<form class="container" action="{{ url_for('calculate') }}" method="post">
+    <div class="row">
+        <div class="col-lg-2 col-md-4">
+            <input type="number" step="0.01" name="firstNumber" class="form-control" placeholder="Insert first number" required>
+        </div>
+
+        <div class="col-lg-2">
+            <select id="selectOperation" name="operation" class="form-control" required>
+                <option value="">Select...</option>
+                <option value="plus">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">x</option>
+                <option value="divide">/</option>
+            </select>
+        </div>
+
+        <div class="col-lg-2 col-md-4">
+            <input type="number" step="0.01" name="secondNumber" class="form-control" placeholder="Insert second number" required>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-lg-1">
+                <div class="text-center">=</div>
+            </div>
+
+            <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="Result" value="{{result}}">
+            </div>
+
+            <div class="col-lg-3">
+                <input type="submit" value="Calculate" class="btn btn-primary">
+            </div>
+
+            <div class="col-lg-3">
+                <div class="alert {{color}}">{{note}}</div>
+            </div>
+        </div>
+    </div>
+</form>
 {% endblock %}
