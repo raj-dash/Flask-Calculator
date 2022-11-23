@@ -1,31 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/", methods=['POST', 'GET'])
-def calculate():
-    ans = a = b = operation = ''
-    if request.method=='POST':
-        try:
-            a = float(request.form.get('a'))
-            b = float(request.form.get('b'))
-            operation = request.form.get('op')
-            if operation == '+':
-                ans = a+b
-            elif operation == '-':
-                ans = a-b
-            elif operation == '*' or operation == 'x':
-                ans = a*b
-            elif operation == '/':
-                ans = a/b
-            else:
-                ans = "Enter valid values"
-        except ValueError:
-            ans = "Enter Valid Values"
-    return render_template('index.html', ansh=ans)
+@app.route('/')
+def main():
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
