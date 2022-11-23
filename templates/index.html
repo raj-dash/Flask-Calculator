@@ -29,7 +29,27 @@
             </ul>
           </div>
         </div>
-      </nav>
+    </nav>
+
+    {% if home %}
+    <div class="p-5 mb-4 text-black bg-warning bg-gradient">
+        <div class="container">
+            <h1 class="display-s text-center">
+                <a href="/simple" class="btn btn-light btn-lg">Simple Calculator</a>
+            </h1>
+            <p class="lead text-center mt-5" >This the Simple Calculator, capable of addition, subtraction, multiplication and division</p>
+        </div>
+    </div>
+
+    <div class="p-5 mb-4 text-white bg-dark bg-gradient">
+        <div class="container">
+            <h1 class="display-8 text-center">
+                <a href="/advanced" class="btn btn-light btn-lg">Advanced Calculator</a>
+            </h1>
+            <p class="lead text-center mt-5">This is the Advanced Calculator, capable of trigonometric functions and square root</p>
+        </div>
+    </div>
+    {% endif %}
 
       {% block body %}
 
