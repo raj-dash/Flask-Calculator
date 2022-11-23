@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, url_for
+from math import sin, cos, tan, sqrt
 
 app = Flask(__name__)
 
@@ -38,7 +39,18 @@ def calculate_advanced():
     result = note = color = ''
     first = float(request.form['firstNumber'])
     operation = request.form['operation']
-    return render_template('advanced.html')
+    if operation == "sin":
+        result = sin(first)
+    elif operation == "cos":
+        result = cos(first)
+    elif operation == "tan":
+        result = tan(first)
+    elif operation == "sqrt":
+        result = sqrt(first)
+    else:
+        note = "Error has occured"
+        color = "alert-danger"
+    return render_template('advanced.html', result=result, note=note, color=color)
 
 if __name__ == "__main__":
     app.run(debug=True)
