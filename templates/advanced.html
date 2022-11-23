@@ -4,29 +4,25 @@
 {% block body %}
 <div class="p-5 mb-4 text-black bg-light bg-gradient rounded-3 border">
     <div class="container">
-        <h1 class="display-8">Flask Calculator</h1>
-        <p class="lead">Welcome to the simple calculator</p>
+        <h1 class="display-8">Advanced Flask Calculator</h1>
+        <p class="lead">Welcome to the advanced calculator</p>
     </div>
 </div>
 
-<form class="container" action="{{ url_for('calculate') }}" method="post">
+<form class="container" action="{{ url_for('calculate_advanced') }}" method="post">
     <div class="row">
         <div class="col-lg-2 col-md-4">
-            <input type="number" step="0.01" name="firstNumber" class="form-control" placeholder="Insert first number" required>
+            <input type="number" step="0.01" name="firstNumber" class="form-control" placeholder="Insert number" required>
         </div>
 
         <div class="col-lg-2">
             <select id="selectOperation" name="operation" class="form-control" required>
                 <option value="">Select...</option>
-                <option value="plus">+</option>
-                <option value="minus">-</option>
-                <option value="multiply">x</option>
-                <option value="divide">/</option>
+                <option value="sin">sin</option>
+                <option value="cos">cos</option>
+                <option value="tan">tan</option>
+                <option value="sqrt">Square Root</option>
             </select>
-        </div>
-
-        <div class="col-lg-2 col-md-4">
-            <input type="number" step="0.01" name="secondNumber" class="form-control" placeholder="Insert second number" required>
         </div>
 
         <div class="row mt-3">
